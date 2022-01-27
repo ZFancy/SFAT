@@ -5,7 +5,7 @@ def args_parser():
     parser = argparse.ArgumentParser()
 
     # federated arguments
-    parser.add_argument('--epochs', type=int, default=10,
+    parser.add_argument('--epochs', type=int, default=100,
                         help="number of rounds of training")
     parser.add_argument('--num_users', type=int, default=5,
                         help="number of users: K")
