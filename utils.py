@@ -104,7 +104,7 @@ def average_weights(w):
         w_avg[key] = torch.div(w_avg[key], len(w))
     return w_avg
     
-# Alpha-WFAT
+# SFAT
 def average_weights_alpha(w, lw, idx, p):
     """
     Returns the weighted average of the weights.

@@ -16,7 +16,7 @@ from update import LocalUpdate, test_inference
 from utils import get_dataset, average_weights, exp_details, average_weights_alpha
 
 # Save checkpoint
-def save_checkpoint(state, checkpoint='../Alpha_WFAT_result', filename='checkpoint.pth.tar'):
+def save_checkpoint(state, checkpoint='../SFAT_result', filename='checkpoint.pth.tar'):
     filepath = os.path.join(checkpoint, filename)
     torch.save(state, filepath)
 
@@ -46,8 +46,8 @@ if __name__ == '__main__':
     global_best_pgd = 0
     best_epoch = 0
 
-    print('==> Alpha-WFAT')
-    title = 'Alpha-WFAT'
+    print('==> SFAT')
+    title = 'SFAT'
     logger_test = Logger(os.path.join(args.out_dir, 'log_results.txt'), title=title)
     logger_test.set_names(['Global Epoch', 'Local Epoch', 'Epoch', 'Natural Test Acc', 'PGD20 Acc'])
 
@@ -158,7 +158,7 @@ if __name__ == '__main__':
         if args.agg_center == 'FedAvg':
             global_weights = average_weights(local_weights)
         
-        if args.agg_center == 'Alpha_WFAT':
+        if args.agg_center == 'SFAT':
             idt_sorted = np.sort(idt)
             idtxnum = float('inf')
             idtx = args.topk
