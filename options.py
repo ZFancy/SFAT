@@ -12,9 +12,9 @@ def args_parser():
     parser.add_argument('--frac', type=float, default=1.0,
                         help='the fraction of clients: C')
     parser.add_argument('--local_ep', type=int, default=10,
-                        help="the number of local epochs: E")
+                        help="the number of local epochs: E, 2 for SVHN, 3 for CIFAR-100")
     parser.add_argument('--local_bs', type=int, default=32,
-                        help="local batch size: B")
+                        help="local batch size: B, 128 for SVHN and CIFAR-100")
     parser.add_argument('--lr', type=float, default=0.01,
                         help='learning rate')
     parser.add_argument('--momentum', type=float, default=0.9,
