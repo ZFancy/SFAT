@@ -1,7 +1,7 @@
 import copy
 import torch
 from torchvision import datasets, transforms
-from sampling import cifar_iid, svhn_iid, cifar_noniid_skew, svhn_noniid_skew, cifar100_noniid_skew
+from sampling import cifar_iid, svhn_iid, cifar_noniid_skew, svhn_noniid_skew, cifar100_noniid_skew, svhn_noniid_unequal, cifar10_noniid_unequal
 
 
 def get_dataset(args):
@@ -30,7 +30,7 @@ def get_dataset(args):
             # Sample Non-IID user data from Mnist
             if args.unequal:
                 # Chose uneuqal splits for every user
-                raise NotImplementedError()
+                user_groups = cifar10_noniid_unequal(train_dataset, args.num_users)
             else:
                 # Chose euqal splits for every user
                 user_groups = cifar_noniid_skew(train_dataset, args.num_users)
@@ -56,7 +56,7 @@ def get_dataset(args):
             # Sample Non-IID user data from Mnist
             if args.unequal:
                 # Chose uneuqal splits for every user
-                raise NotImplementedError()
+                user_groups = svhn_noniid_unequal(train_dataset, args.num_users)
             else:
                 # Chose euqal splits for every user
                 #print(train_dataset.labels)
@@ -103,6 +103,20 @@ def average_weights(w):
             w_avg[key] += w[i][key]
         w_avg[key] = torch.div(w_avg[key], len(w))
     return w_avg
+
+# # FedAvg unequal
+# def average_weights(w, idx_num):
+#     """
+#     Returns the average of the weights.
+#     """
+#     w_avg = copy.deepcopy(w[0])
+#     for key in w_avg.keys():
+#         print(key)
+#         w_avg[key] = w_avg[key] * float(idx_num[0]*len(w)/sum(idx_num))
+#         for i in range(1, len(w)):
+#             w_avg[key] += w[i][key] * float(idx_num[i]*len(w)/sum(idx_num))
+#         w_avg[key] = torch.div(w_avg[key], len(w))
+#     return w_avg
     
 # SFAT
 def average_weights_alpha(w, lw, idx, p):
@@ -120,7 +134,25 @@ def average_weights_alpha(w, lw, idx, p):
                 w_avg[key] = w_avg[key] + w[i][key]
         w_avg[key] = torch.div(w_avg[key], cou+(len(w)-cou)*p)
     return w_avg
-    
+
+
+# # SFAT unequal
+# def average_weights_alpha(w, lw, idx, p, idx_num):
+#     """
+#     Returns the weighted average of the weights.
+#     """
+#     w_avg = copy.deepcopy(w[0])
+#     for key in w_avg.keys():
+#         cou = 0
+#         w_avg[key] = w_avg[key] * float(idx_num[0]*len(w)/sum(idx_num))
+#         for i in range(1, len(w)):
+#             if (lw[i] >= idx) and (('bn' not in key)):
+#                 w_avg[key] = w_avg[key] + w[i][key] * p * float(idx_num[i]*len(w)/sum(idx_num))
+#             else:
+#                 cou += 1 
+#                 w_avg[key] = w_avg[key] + w[i][key] * float(idx_num[i]*len(w)/sum(idx_num))
+#         w_avg[key] = torch.div(w_avg[key], cou+(len(w)-cou)*p)
+#     return w_avg  
 
 def exp_details(args):
     print('\nExperimental details:')

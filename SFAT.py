@@ -101,6 +101,7 @@ if __name__ == '__main__':
         local_weights, local_losses, idt = [], [], []
         idx_train_acc = []
         ipp = []
+        idx_num = []
         print(f'\n | Global Training Round : {epoch+1} |\n')
         
         m = max(int(args.frac * args.num_users), 1)
@@ -110,7 +111,7 @@ if __name__ == '__main__':
             total_delta = copy.deepcopy(global_model.state_dict())
             for key in total_delta:
                 total_delta[key] = 0.0
-        
+        ctr = 0
         for idx in idxs_users:
             local_model = LocalUpdate(args=args, dataset=train_dataset,
                                       idxs=user_groups[idx], logger=logger, alg=args.agg_opt, anchor=global_model, anchor_mu=args.mu, local_rank=ipx, method=args.train_method)
@@ -126,6 +127,9 @@ if __name__ == '__main__':
             local_weights.append(copy.deepcopy(w))
             local_losses.append(copy.deepcopy(loss))
             idt.append(ide)
+            #idx_num.append(len(user_groups[idx]))
+            #idt.append(ide*(idx_num[ctr]))
+            #ctr = ctr+1
             ipp.append(pp_index)
             idx_train_acc.append(idx_train)
             
@@ -157,7 +161,7 @@ if __name__ == '__main__':
         # aggregation methods
         if args.agg_center == 'FedAvg':
             global_weights = average_weights(local_weights)
-        
+            #global_weights = average_weights(local_weights, idx_num)        
         if args.agg_center == 'SFAT':
             idt_sorted = np.sort(idt)
             idtxnum = float('inf')
@@ -168,8 +172,10 @@ if __name__ == '__main__':
                 idtxnum = idt_sorted[m-idtx]
             if epoch >0:
                 global_weights = average_weights_alpha(local_weights, idt, idtxnum, args.pri)
+                #global_weights = average_weights_alpha(local_weights, idt, idtxnum, args.pri, idx_num)                
             else:
                 global_weights = average_weights(local_weights)
+                #global_weights = average_weights(local_weights, idx_num)
             
         # update global weights
         global_model.load_state_dict(global_weights)

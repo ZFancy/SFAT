@@ -38,7 +38,7 @@ def args_parser():
     parser.add_argument('--stopping_rounds', type=int, default=10,
                         help='rounds of early stopping')
     parser.add_argument('--verbose', type=int, default=1, help='verbose')
-    parser.add_argument('--seed', type=int, default=1, help='random seed')
+    parser.add_argument('--seed', type=int, default=6, help='random seed')
     parser.add_argument('--num-steps', type=int, default=10, help='maximum perturbation step K')
     parser.add_argument('--out-dir',type=str,default='../SFAT_result',help='dir of output')
     parser.add_argument('--agg-opt',type=str,default='FedAvg',help='option of on-device learning: FedAvg, FedProx, Scaffold')
