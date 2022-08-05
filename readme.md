@@ -51,7 +51,7 @@ if args.agg_center == 'SFAT':
 
 In ```updates.py```, we realize the local training on each client for adversarial training and defined the ```LocalUpdate()```.
 
-In ```utils.py```, we realize the aggregation methods and define the FAT, i.e., ```average_weights(local_weights)``` and SFAT ```average_weights_alpha``` as well as their unequal versions. For the our SFAT, the critical part of code is as follows, where the ```lw``` and ```idx``` is to help choose the corresponding clients and the ```p``` is our $\alpha$-slack parameter for reweighting.
+In ```utils.py```, we realize the aggregation methods and define the FAT, i.e., ```average_weights()``` and SFAT ```average_weights_alpha()``` as well as their unequal versions. For the our SFAT, the critical part of code is as follows, where the ```lw``` and ```idx``` is to help choose the corresponding clients and the ```p``` is our $\alpha$-slack parameter for reweighting.
 
 ~~~python
 # SFAT
