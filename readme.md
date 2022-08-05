@@ -1,5 +1,3 @@
-# SFAT: Preventing Intensified Heterogeneity for Adversarially Robust Decentralized Models
-
 This is the source code of our proposed framework ```Slack Federated Adversarial Training (SFAT)```.
 
 Our SFAT assigns the client-wise slack during aggregation to combat the intensified heterogeneity, which is induced by the inner-maximization of adversarial training on the heterogeneous data in federated learning.
