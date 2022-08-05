@@ -115,7 +115,7 @@ CUDA_VISIBLE_DEVICES='0' python eval_pgd.py --net [NETWORK STRUCTURE] --dataset 
 
 Actually, during the training, we also provide the accuracy track via ```logger.py``` to save the model performance in each epoch.
 
-### To extend the yourself method in our framework
+### To extend and design new method in our framework
 
 Either the local optimization or aggregation method can be re-designed based on our framework in the corresponding ```updates.py``` and ```utils.py``` part. 
 
