@@ -161,7 +161,7 @@ if __name__ == '__main__':
         # aggregation methods
         if args.agg_center == 'FedAvg':
             global_weights = average_weights(local_weights)
-            #global_weights = average_weights(local_weights, idx_num)        
+            #global_weights = average_weights_unequal(local_weights, idx_num)        
         if args.agg_center == 'SFAT':
             idt_sorted = np.sort(idt)
             idtxnum = float('inf')
@@ -172,10 +172,10 @@ if __name__ == '__main__':
                 idtxnum = idt_sorted[m-idtx]
             if epoch >0:
                 global_weights = average_weights_alpha(local_weights, idt, idtxnum, args.pri)
-                #global_weights = average_weights_alpha(local_weights, idt, idtxnum, args.pri, idx_num)                
+                #global_weights = average_weights_alpha_unequal(local_weights, idt, idtxnum, args.pri, idx_num)                
             else:
                 global_weights = average_weights(local_weights)
-                #global_weights = average_weights(local_weights, idx_num)
+                #global_weights = average_weights_unequal(local_weights, idx_num)
             
         # update global weights
         global_model.load_state_dict(global_weights)

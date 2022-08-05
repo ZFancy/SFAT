@@ -105,18 +105,18 @@ def average_weights(w):
     return w_avg
 
 # # FedAvg unequal
-# def average_weights(w, idx_num):
-#     """
-#     Returns the average of the weights.
-#     """
-#     w_avg = copy.deepcopy(w[0])
-#     for key in w_avg.keys():
-#         print(key)
-#         w_avg[key] = w_avg[key] * float(idx_num[0]*len(w)/sum(idx_num))
-#         for i in range(1, len(w)):
-#             w_avg[key] += w[i][key] * float(idx_num[i]*len(w)/sum(idx_num))
-#         w_avg[key] = torch.div(w_avg[key], len(w))
-#     return w_avg
+def average_weights_unequal(w, idx_num):
+    """
+    Returns the average of the weights.
+    """
+    w_avg = copy.deepcopy(w[0])
+    for key in w_avg.keys():
+        print(key)
+        w_avg[key] = w_avg[key] * float(idx_num[0]*len(w)/sum(idx_num))
+        for i in range(1, len(w)):
+            w_avg[key] += w[i][key] * float(idx_num[i]*len(w)/sum(idx_num))
+        w_avg[key] = torch.div(w_avg[key], len(w))
+    return w_avg
     
 # SFAT
 def average_weights_alpha(w, lw, idx, p):
@@ -137,22 +137,22 @@ def average_weights_alpha(w, lw, idx, p):
 
 
 # # SFAT unequal
-# def average_weights_alpha(w, lw, idx, p, idx_num):
-#     """
-#     Returns the weighted average of the weights.
-#     """
-#     w_avg = copy.deepcopy(w[0])
-#     for key in w_avg.keys():
-#         cou = 0
-#         w_avg[key] = w_avg[key] * float(idx_num[0]*len(w)/sum(idx_num))
-#         for i in range(1, len(w)):
-#             if (lw[i] >= idx) and (('bn' not in key)):
-#                 w_avg[key] = w_avg[key] + w[i][key] * p * float(idx_num[i]*len(w)/sum(idx_num))
-#             else:
-#                 cou += 1 
-#                 w_avg[key] = w_avg[key] + w[i][key] * float(idx_num[i]*len(w)/sum(idx_num))
-#         w_avg[key] = torch.div(w_avg[key], cou+(len(w)-cou)*p)
-#     return w_avg  
+def average_weights_alpha_unequal(w, lw, idx, p, idx_num):
+    """
+    Returns the weighted average of the weights.
+    """
+    w_avg = copy.deepcopy(w[0])
+    for key in w_avg.keys():
+        cou = 0
+        w_avg[key] = w_avg[key] * float(idx_num[0]*len(w)/sum(idx_num))
+        for i in range(1, len(w)):
+            if (lw[i] >= idx) and (('bn' not in key)):
+                w_avg[key] = w_avg[key] + w[i][key] * p * float(idx_num[i]*len(w)/sum(idx_num))
+            else:
+                cou += 1 
+                w_avg[key] = w_avg[key] + w[i][key] * float(idx_num[i]*len(w)/sum(idx_num))
+        w_avg[key] = torch.div(w_avg[key], cou+(len(w)-cou)*p)
+    return w_avg  
 
 def exp_details(args):
     print('\nExperimental details:')
