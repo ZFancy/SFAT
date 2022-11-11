@@ -51,25 +51,6 @@ In ```updates.py```, we realize the local training on each client for adversaria
 
 In ```utils.py```, we realize the aggregation methods and define the FAT, i.e., ```average_weights()``` and SFAT ```average_weights_alpha()``` as well as their unequal versions. For the our SFAT, the critical part of code is as follows, where the ```lw``` and ```idx``` is to help choose the corresponding clients and the ```p``` is our $\alpha$-slack parameter for reweighting.
 
-~~~python
-# SFAT
-def average_weights_alpha(w, lw, idx, p):
-    """
-    Returns the weighted average of the weights.
-    """
-    w_avg = copy.deepcopy(w[0])
-    for key in w_avg.keys():
-        cou = 0
-        for i in range(1, len(w)):
-            if (lw[i] >= idx) and (('bn' not in key)):
-                w_avg[key] = w_avg[key] + w[i][key] * p
-            else:
-                cou += 1 
-                w_avg[key] = w_avg[key] + w[i][key]
-        w_avg[key] = torch.div(w_avg[key], cou+(len(w)-cou)*p)
-    return w_avg
-~~~
-
 ### Data split 
 
 We realize the operation of data split in ```sampling.py``` and utilized in ```utils.py``` for generate local data loader for each client. We can use our pre-defined split function as following to get the local data.
