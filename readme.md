@@ -14,9 +14,10 @@ This is the source code of our proposed framework ```Slack Federated Adversarial
 
 TODO:
 
-- [x] Released a [introductory blog]() in Chinese.
-- [x] Released the early version of source code.
-
+- [ ] Update the Project Page of SFAT.
+- [ ] Update the Presentation [Slides]() and [Video]().
+- [ ] Released a [introductory blog]() in Chinese.
+- [ ] Released the early version of source code.
 
 ## Introduction 
 
