@@ -10,7 +10,7 @@
    <!--  <a href="https://icml.cc/media/PosterPDFs/ICML%202022/a8acc28734d4fe90ea24353d901ae678.png"> <img src="https://img.shields.io/badge/Poster-grey?logo=airplayvideo&logoColor=white" alt="Poster"></a> -->
 </p>
 
-This is the source code of our proposed framework ```Slack Federated Adversarial Training (SFAT)``` in our ICLR 2023 paper: [Combating Exacerbated Heterogeneity for Robust Models In Federated Learning](https://openreview.net/forum?id=eKllxpLOOm).
+This repo contains the sample code of our proposed framework ```Slack Federated Adversarial Training (SFAT)``` in our ICLR 2023 paper: [Combating Exacerbated Heterogeneity for Robust Models In Federated Learning](https://openreview.net/forum?id=eKllxpLOOm).
 
 TODO:
 
