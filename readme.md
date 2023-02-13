@@ -137,6 +137,13 @@ Actually, during the training, we also provide the accuracy track via ```logger.
 
 Either the local optimization or aggregation method can be re-designed based on our framework in the corresponding ```updates.py``` and ```utils.py``` part. 
 
+## Reference Code
+
+- https://github.com/AshwinRJ/Federated-Learning-PyTorch
+- https://github.com/med-air/FedBN
+- https://github.com/ongzh/ScaffoldFL
+- https://github.com/zjfheart/Geometry-aware-Instance-reweighted-Adversarial-Training
+
 --- 
 
 ```bibtex
