@@ -35,29 +35,32 @@ Our SFAT assigns the client-wise slack during aggregation to combat the intensif
 ### File Structure:
 
 Main codes
+```
   - SFAT.py
   - Centralized_AT.py
   - update.py
   - utils.py 
   - attack_generator.py
-
+```
 Data split and model structure
+```
   - sampling.py
   - models.py
-
+```
 Other utils and parameter setups
+```
   - options.py
   - logger.py
   - eval_pgd.py
-
+```
 ### Environment
-
+```
   - Python (3.8)
   - Pytorch (1.7.0 or above)
   - torchvision
   - CUDA
   - Numpy
-
+```
 Following the conventional federated learning realization, we realizes the overall framework of ```SFAT``` in ```SFAT.py``` which coordinate the local optimization part in ```update.py``` and the aggregation functions in ```utils.py```.
 
 In ```SFAT.py```, we get the local model in each client and aggregate the global model.
