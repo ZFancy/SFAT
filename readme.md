@@ -10,7 +10,7 @@
    <!--  <a href="https://icml.cc/media/PosterPDFs/ICML%202022/a8acc28734d4fe90ea24353d901ae678.png"> <img src="https://img.shields.io/badge/Poster-grey?logo=airplayvideo&logoColor=white" alt="Poster"></a> -->
 </p>
 
-This repo contains the sample code of our proposed framework ```Slack Federated Adversarial Training (SFAT)``` in our ICLR 2023 paper: [Combating Exacerbated Heterogeneity for Robust Models In Federated Learning](https://openreview.net/forum?id=eKllxpLOOm).
+This repo contains the sample code of our proposed framework ```Slack Federated Adversarial Training (SFAT)``` in our paper: [Combating Exacerbated Heterogeneity for Robust Models In Federated Learning](https://openreview.net/forum?id=eKllxpLOOm) (ICLR 2023).
 
 TODO:
 
@@ -31,37 +31,32 @@ Our SFAT assigns the client-wise slack during aggregation to combat the intensif
 <p align="center"><img src="./pictures/figure5.png" width=50% height=50%></p>
 <p align="center"><em>Figure 3.</em> Comparison of FAT and SFAT using approximated client drift.</p>
 
-## Quick start of our SFAT
+## Quick preview of our SFAT
 
 ### Environment
 ```
-  - Python (3.8)
-  - Pytorch (1.7.0 or above)
-  - torchvision
-  - CUDA
-  - Numpy
+Python (3.8)
+Pytorch (1.7.0 or above)
+torchvision
+CUDA
+Numpy
 ```
 
 ### File Structure
 
-Main codes
 ```
-  - SFAT.py
-  - Centralized_AT.py
-  - update.py
-  - utils.py 
-  - attack_generator.py
-```
-Data split and model structure
-```
-  - sampling.py
-  - models.py
-```
-Other utils and parameter setups
-```
-  - options.py
-  - logger.py
-  - eval_pgd.py
+./SFAT-main
+├─ Centralized_AT.py        # Training and evaluation
+├─ SFAT.py
+├─ attack_generator.py
+├─ eval_pgd.py
+├─ logger.py
+├─ models.py
+├─ options.py               # Options and hyperparameters
+├─ readme.md
+├─ sampling.py              # Data split
+├─ update.py
+└─ utils.py                 # Aggregation and other utils
 ```
 
 ### Running example
