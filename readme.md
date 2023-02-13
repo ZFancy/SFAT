@@ -26,9 +26,11 @@ Our SFAT assigns the client-wise slack during aggregation to combat the intensif
 <p align="center"><em>Figure 1.</em> Robust Deterioration.</p>
 
 
-<p align="center"><img src="./pictures/figure4.png" width=30% height=50%><img src="./pictures/figure2.png" width=43.4% height=50%></p>
+<p align="center"><img src="./pictures/figure4.png" height=200><img src="./pictures/figure2.png" height=200></p>
 <p align="center"><em>Figure 2.</em> Illustration of $\alpha$-slacked mechanism.</p>
 
+<p align="center"><img src="./pictures/figure5.png" width=50% height=50%></p>
+<p align="center"><em>Figure 3.</em> Comparison of FAT and SFAT using approximated client drift.</p>
 
 ## Quick overview of our SFAT
 
@@ -131,6 +133,8 @@ Actually, during the training, we also provide the accuracy track via ```logger.
 ### To extend and design new method in our framework
 
 Either the local optimization or aggregation method can be re-designed based on our framework in the corresponding ```updates.py``` and ```utils.py``` part. 
+
+--- 
 
 ```bibtex
 @inproceedings{zhu2023combating,
