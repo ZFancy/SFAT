@@ -56,9 +56,9 @@ Numpy
 ./SFAT-main
 ├─ Centralized_AT.py        # Training and evaluation
 ├─ SFAT.py
-├─ attack_generator.py
+├─ attack_generator.py      # Attack generation
 ├─ eval_pgd.py
-├─ logger.py
+├─ logger.py                # Log support
 ├─ models.py
 ├─ options.py               # Options and hyperparameters
 ├─ readme.md
@@ -133,6 +133,7 @@ To evaluate our trained model using various attack methods, we provide the ```ev
 ~~~bash
 CUDA_VISIBLE_DEVICES='0' python eval_pgd.py --net [NETWORK STRUCTURE] --dataset [DATASET] --model_path [MODLE PATH]
 ~~~
+Sample results:
 | CIFAR-10 (Non-IID) | Natural | FGSM             | PGD-20           | CW    | AutoAttack       |
 |:----------:|---------|------------------|------------------|------------------|------------------|
 | FedAvg   | FAT     | 58.13 (0.68) | 40.06 (0.62) | 32.56 (0.01) | 30.88 (0.37) |
