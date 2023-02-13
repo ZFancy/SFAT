@@ -36,13 +36,6 @@ We dive into the issue of robustness deterioration and discover that it may attr
 <p align="center"><img src="./pictures/figure4.png" width=34.5% height=50%><img src="./pictures/figure2.png" width=50% height=50%></p>
 <p align="center"><em>Figure 2.</em> Illustration of $\alpha$-slacked mechanism.</p>
 
-Compared with FAT, our proposed SFAT selectively upweights/downweights the client with small/large adversarial training loss to alleviate it during aggregation, which follows our $\alpha$-slack mechanism to relax the original objective into a lower bound. 
-
-<p align="center"><img src="./pictures/figure5.png" width=50% height=50%></p>
-<p align="center"><em>Figure 3.</em> Comparison of FAT and SFAT using approximated client drift.</p>
-
-SFAT can a smaller drift compared to FAT, i.e., a less heterogeneous aggregation, by adapting $\alpha$-slack mechanism.
-
 ## Quick preview of our SFAT
 
 ### Environment
@@ -77,11 +70,15 @@ To train federated robust model, we provide examples below to use our code:
 
 ~~~bash
 CUDA_VISIBLE_DEVICES='0' python SFAT.py --dataset=cifar-10 --local_ep=10 --local_bs=32 --iid=0 --epochs=100 --num_users=5 --agg-opt='FedAvg' --agg-center='FedAvg' --out-dir='../output_results_FAT_FedAvg'
-~~~
 
-~~~bash
+
 CUDA_VISIBLE_DEVICES='0' python SFAT.py --dataset=cifar-10 --local_ep=10 --local_bs=32 --iid=0 --epochs=100 --num_users=5 --agg-opt='FedAvg' --agg-center='SFAT' --pri=1.2 --out-dir='../output_results_SFAT_FedAvg'
 ~~~
+
+<p align="center"><img src="./pictures/figure5.png" width=50% height=50%></p>
+<p align="center"><em>Figure 3.</em> Comparison of FAT and SFAT using approximated client drift.</p>
+
+Compared with FAT, our proposed SFAT selectively upweights/downweights the client with small/large adversarial training loss to alleviate it during aggregation, which follows our $\alpha$-slack mechanism to relax the original objective into a lower bound. SFAT can a smaller drift compared to FAT, i.e., a less heterogeneous aggregation, by adapting $\alpha$-slack mechanism.
 
 ### Realization details
 
