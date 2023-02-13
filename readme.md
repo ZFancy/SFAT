@@ -16,8 +16,7 @@ TODO:
 
 - [ ] Update the Project Page of SFAT.
 - [ ] Update the Presentation [Slides]() and [Video]().
-- [ ] Released a [introductory blog]() in Chinese.
-- [ ] Released the early version of source code.
+- [x] Released the early version of sample code.
 
 ## Introduction 
 
