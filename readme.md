@@ -23,16 +23,24 @@ TODO:
 Our SFAT assigns the client-wise slack during aggregation to combat the intensified heterogeneity, which is induced by the inner-maximization of adversarial training on the heterogeneous data in federated learning.
 
 <p align="center"><img src="./pictures/figure1.png" width=70% height=50%></p>
-<p align="center"><em>Figure 1.</em> Robust Deterioration.</p>
+<p align="center"><em>Figure 1.</em> Robust Deterioration in federated adversarial training.</p>
 
-
-<p align="center"><img src="./pictures/figure4.png" height=200><img src="./pictures/figure2.png" height=200></p>
+<p align="center"><img src="./pictures/figure4.png" width=34.5% height=50%><img src="./pictures/figure2.png" width=50% height=50%></p>
 <p align="center"><em>Figure 2.</em> Illustration of $\alpha$-slacked mechanism.</p>
 
 <p align="center"><img src="./pictures/figure5.png" width=50% height=50%></p>
 <p align="center"><em>Figure 3.</em> Comparison of FAT and SFAT using approximated client drift.</p>
 
-## Quick overview of our SFAT
+## Quick start of our SFAT
+
+### Environment
+```
+  - Python (3.8)
+  - Pytorch (1.7.0 or above)
+  - torchvision
+  - CUDA
+  - Numpy
+```
 
 ### File Structure
 
@@ -54,14 +62,6 @@ Other utils and parameter setups
   - options.py
   - logger.py
   - eval_pgd.py
-```
-### Environment
-```
-  - Python (3.8)
-  - Pytorch (1.7.0 or above)
-  - torchvision
-  - CUDA
-  - Numpy
 ```
 
 ### Running example
