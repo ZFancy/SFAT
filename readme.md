@@ -11,6 +11,9 @@
 </p>
 
 This repo contains the sample code of our proposed framework ```Slack Federated Adversarial Training (SFAT)``` in our paper: [Combating Exacerbated Heterogeneity for Robust Models In Federated Learning](https://openreview.net/forum?id=eKllxpLOOm) (ICLR 2023).
+<p align="center"><img src="./pictures/figure0.png" width=90% height=50%></p>
+<p align="center"><em>Figure.</em> Framework overview of SFAT.</p>
+
 
 TODO:
 
@@ -130,6 +133,12 @@ To evaluate our trained model using various attack methods, we provide the ```ev
 ~~~bash
 CUDA_VISIBLE_DEVICES='0' python eval_pgd.py --net [NETWORK STRUCTURE] --dataset [DATASET] --model_path [MODLE PATH]
 ~~~
+| CIFAR-10 (Non-IID) | Natural | FGSM             | PGD-20           | CW    | AutoAttack       |
+|:----------:|---------|------------------|------------------|------------------|------------------|
+| FedAvg   | FAT     | 58.13 (0.68) | 40.06 (0.62) | 32.56 (0.01) | 30.88 (0.37) |
+| FedAvg   | **SFAT**    | **63.36** (0.07) | **44.82** (0.32) | **37.14** (0.03) | **33.39** (0.61) |
+
+
 
 Actually, during the training, we also provide the accuracy track via ```logger.py``` to save the model performance in each epoch.
 
