@@ -23,7 +23,9 @@ TODO:
 
 Our SFAT assigns the client-wise slack during aggregation to combat the intensified heterogeneity, which is induced by the inner-maximization of adversarial training on the heterogeneous data in federated learning.
 
-## File Structure:
+## Quick overview of our SFAT
+
+### File Structure:
 
 Main codes
   - SFAT.py
@@ -41,15 +43,13 @@ Other utils and parameter setups
   - logger.py
   - eval_pgd.py
 
-## Environment
+### Environment
 
   - Python (3.8)
   - Pytorch (1.7.0 or above)
   - torchvision
   - CUDA
   - Numpy
-
-## Quick overview of our SFAT
 
 Following the conventional federated learning realization, we realizes the overall framework of ```SFAT``` in ```SFAT.py``` which coordinate the local optimization part in ```update.py``` and the aggregation functions in ```utils.py```.
 
