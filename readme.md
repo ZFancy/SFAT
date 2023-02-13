@@ -25,6 +25,15 @@ Our SFAT assigns the client-wise slack during aggregation to combat the intensif
 <p align="center"><img src="./pictures/figure1.png" width=50% height=50%></p>
 <p align="center"><em>Figure 1.</em> The motivation of robust deterioration.</p>
 
+<p align="center"><img src="./pictures/figure2.png" width=50% height=50%></p>
+<p align="center"><em>Figure 2.</em> The motivation of robust deterioration.</p>
+
+<p align="center"><img src="./pictures/figure3.png" width=50% height=50%></p>
+<p align="center"><em>Figure 3.</em> The motivation of robust deterioration.</p>
+
+<p align="center"><img src="./pictures/figure4.png" width=50% height=50%></p>
+<p align="center"><em>Figure 4.</em> The motivation of robust deterioration.</p>
+
 ## Quick overview of our SFAT
 
 ### File Structure:
