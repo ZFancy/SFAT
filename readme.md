@@ -18,18 +18,30 @@ TODO:
 - [ ] Update the Presentation [Slides]() and [Video]().
 - [x] Released the early version of sample code.
 
-## Introduction 
+### TLDR
 
 Our SFAT assigns the client-wise slack during aggregation to combat the intensified heterogeneity, which is induced by the inner-maximization of adversarial training on the heterogeneous data in federated learning.
+
+## Introduction 
+
+The emerging privacy and security issues in real-world applications motivate us to pursue the adversarially robust federated models. However, the straightforward combination between adversarial training and federated learning in one framework can induce the undesired robustness deterioration.
 
 <p align="center"><img src="./pictures/figure1.png" width=70% height=50%></p>
 <p align="center"><em>Figure 1.</em> Robust Deterioration in federated adversarial training.</p>
 
+We dive into the issue of robustness deterioration and discover that it may attribute to the intensified heterogeneity induced by adversarial training in local clients. Considering federated learning, one of the primary difficulties is the biased optimization caused by the local training with heterogeneous data. As for adversarial training, the key distinction from standard training is the use of inner-maximization to generate adversarial data, which pursues the better adversarial robustness. When combining the two learning paradigms, we conjecture that the following issue may arise especially under the Non-IID case,
+
+<p align="center"><i>the inner-maximization for pursuing adversarial robustness would exacerbate the data heterogeneity among local clients in federated learning.</i></p>
+
 <p align="center"><img src="./pictures/figure4.png" width=34.5% height=50%><img src="./pictures/figure2.png" width=50% height=50%></p>
 <p align="center"><em>Figure 2.</em> Illustration of $\alpha$-slacked mechanism.</p>
 
+Compared with FAT, our proposed SFAT selectively upweights/downweights the client with small/large adversarial training loss to alleviate it during aggregation, which follows our $\alpha$-slack mechanism to relax the original objective into a lower bound. 
+
 <p align="center"><img src="./pictures/figure5.png" width=50% height=50%></p>
 <p align="center"><em>Figure 3.</em> Comparison of FAT and SFAT using approximated client drift.</p>
+
+SFAT can a smaller drift compared to FAT, i.e., a less heterogeneous aggregation, by adapting $\alpha$-slack mechanism.
 
 ## Quick preview of our SFAT
 
