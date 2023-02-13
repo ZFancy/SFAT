@@ -126,6 +126,8 @@ def average_weights_alpha(w, lw, idx, p):
     w_avg = copy.deepcopy(w[0])
     for key in w_avg.keys():
         cou = 0
+        if (lw[0] >= idx):
+            w_avg[key] = w_avg[key] * p
         for i in range(1, len(w)):
             if (lw[i] >= idx) and (('bn' not in key)):
                 w_avg[key] = w_avg[key] + w[i][key] * p
@@ -144,7 +146,10 @@ def average_weights_alpha_unequal(w, lw, idx, p, idx_num):
     w_avg = copy.deepcopy(w[0])
     for key in w_avg.keys():
         cou = 0
-        w_avg[key] = w_avg[key] * float(idx_num[0]*len(w)/sum(idx_num))
+        if (lw[0] >= idx):
+            w_avg[key] = w_avg[key] * p * float(idx_num[0]*len(w)/sum(idx_num))
+        else:
+            w_avg[key] = w_avg[key] * float(idx_num[0]*len(w)/sum(idx_num))
         for i in range(1, len(w)):
             if (lw[i] >= idx) and (('bn' not in key)):
                 w_avg[key] = w_avg[key] + w[i][key] * p * float(idx_num[i]*len(w)/sum(idx_num))
