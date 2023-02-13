@@ -23,16 +23,16 @@ TODO:
 Our SFAT assigns the client-wise slack during aggregation to combat the intensified heterogeneity, which is induced by the inner-maximization of adversarial training on the heterogeneous data in federated learning.
 
 <p align="center"><img src="./pictures/figure1.png" width=70% height=50%></p>
-<p align="center"><em>Figure 1.</em> The motivation of robust deterioration.</p>
+<p align="center"><em>Figure 1.</em> Robust Deterioration.</p>
 
 
 <p align="center"><img src="./pictures/figure4.png" width=30% height=50%><img src="./pictures/figure2.png" width=43.4% height=50%></p>
-<p align="center"><em>Figure 2.</em> The motivation of robust deterioration.</p>
+<p align="center"><em>Figure 2.</em> Illustration of $\alpha$-slacked mechanism.</p>
 
 
 ## Quick overview of our SFAT
 
-### File Structure:
+### File Structure
 
 Main codes
 ```
@@ -61,6 +61,21 @@ Other utils and parameter setups
   - CUDA
   - Numpy
 ```
+
+### Running example
+
+To train federated robust model, we provide examples below to use our code:
+
+~~~bash
+CUDA_VISIBLE_DEVICES='0' python SFAT.py --dataset=cifar-10 --local_ep=10 --local_bs=32 --iid=0 --epochs=100 --num_users=5 --agg-opt='FedAvg' --agg-center='FedAvg' --out-dir='../output_results_FAT_FedAvg'
+~~~
+
+~~~bash
+CUDA_VISIBLE_DEVICES='0' python SFAT.py --dataset=cifar-10 --local_ep=10 --local_bs=32 --iid=0 --epochs=100 --num_users=5 --agg-opt='FedAvg' --agg-center='SFAT' --pri=1.2 --out-dir='../output_results_SFAT_FedAvg'
+~~~
+
+### Realization details
+
 Following the conventional federated learning realization, we realizes the overall framework of ```SFAT``` in ```SFAT.py``` which coordinate the local optimization part in ```update.py``` and the aggregation functions in ```utils.py```.
 
 In ```SFAT.py```, we get the local model in each client and aggregate the global model.
@@ -101,19 +116,6 @@ To choose different federated optimization methods (e.g., FedAvg, FedProx, Scaff
 ~~~python
 parser.add_argument('--agg-opt',type=str,default='FedAvg',help='option of on-device learning: FedAvg, FedProx, Scaffold')
 parser.add_argument('--agg-center',type=str,default='FedAvg',help='option of aggregation: FedAvg, SFAT')
-~~~
-
-
-### Running example
-
-To train federated robust model, we provide examples below to use our code:
-
-~~~bash
-CUDA_VISIBLE_DEVICES='0' python SFAT.py --dataset=cifar-10 --local_ep=10 --local_bs=32 --iid=0 --epochs=100 --num_users=5 --agg-opt='FedAvg' --agg-center='FedAvg' --out-dir='../output_results_FAT_FedAvg'
-~~~
-
-~~~bash
-CUDA_VISIBLE_DEVICES='0' python SFAT.py --dataset=cifar-10 --local_ep=10 --local_bs=32 --iid=0 --epochs=100 --num_users=5 --agg-opt='FedAvg' --agg-center='SFAT' --pri=1.2 --out-dir='../output_results_SFAT_FedAvg'
 ~~~
 
 ### Evaluation
