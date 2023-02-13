@@ -119,4 +119,13 @@ Actually, during the training, we also provide the accuracy track via ```logger.
 
 Either the local optimization or aggregation method can be re-designed based on our framework in the corresponding ```updates.py``` and ```utils.py``` part. 
 
-
+```bibtex
+@inproceedings{
+zhu2023combating,
+title={Combating Exacerbated Heterogeneity for Robust Decentralized Models},
+author={Jianing Zhu and Jiangchao Yao and Tongliang Liu and quanming yao and Jianliang Xu and Bo Han},
+booktitle={International Conference on Learning Representations},
+year={2023},
+url={https://openreview.net/forum?id=eKllxpLOOm}
+}
+```
