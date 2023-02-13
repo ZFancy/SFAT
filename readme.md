@@ -22,10 +22,11 @@ TODO:
 
 Our SFAT assigns the client-wise slack during aggregation to combat the intensified heterogeneity, which is induced by the inner-maximization of adversarial training on the heterogeneous data in federated learning.
 
-<p align="center"><img src="./pictures/figure1.png" width=50% height=50%></p>
+<p align="center"><img src="./pictures/figure1.png" width=80% height=50%></p>
 <p align="center"><em>Figure 1.</em> The motivation of robust deterioration.</p>
 
-<p align="center"><img src="./pictures/figure2.png" width=50% height=50%></p>
+
+<p align="center"><img src="./pictures/figure3.png" width=30% height=50%><img src="./pictures/figure2.png" width=50% height=50%></p>
 <p align="center"><em>Figure 2.</em> The motivation of robust deterioration.</p>
 
 
@@ -99,11 +100,6 @@ parser.add_argument('--agg-opt',type=str,default='FedAvg',help='option of on-dev
 parser.add_argument('--agg-center',type=str,default='FedAvg',help='option of aggregation: FedAvg, SFAT')
 ~~~
 
-<p align="center"><img src="./pictures/figure3.png" width=50% height=50%></p>
-<p align="center"><em>Figure 3.</em> The motivation of robust deterioration.</p>
-
-<p align="center"><img src="./pictures/figure4.png" width=50% height=50%></p>
-<p align="center"><em>Figure 4.</em> The motivation of robust deterioration.</p>
 
 ### Running example
 
