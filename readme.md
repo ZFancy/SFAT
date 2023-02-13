@@ -28,11 +28,6 @@ Our SFAT assigns the client-wise slack during aggregation to combat the intensif
 <p align="center"><img src="./pictures/figure2.png" width=50% height=50%></p>
 <p align="center"><em>Figure 2.</em> The motivation of robust deterioration.</p>
 
-<p align="center"><img src="./pictures/figure3.png" width=50% height=50%></p>
-<p align="center"><em>Figure 3.</em> The motivation of robust deterioration.</p>
-
-<p align="center"><img src="./pictures/figure4.png" width=50% height=50%></p>
-<p align="center"><em>Figure 4.</em> The motivation of robust deterioration.</p>
 
 ## Quick overview of our SFAT
 
@@ -103,6 +98,12 @@ To choose different federated optimization methods (e.g., FedAvg, FedProx, Scaff
 parser.add_argument('--agg-opt',type=str,default='FedAvg',help='option of on-device learning: FedAvg, FedProx, Scaffold')
 parser.add_argument('--agg-center',type=str,default='FedAvg',help='option of aggregation: FedAvg, SFAT')
 ~~~
+
+<p align="center"><img src="./pictures/figure3.png" width=50% height=50%></p>
+<p align="center"><em>Figure 3.</em> The motivation of robust deterioration.</p>
+
+<p align="center"><img src="./pictures/figure4.png" width=50% height=50%></p>
+<p align="center"><em>Figure 4.</em> The motivation of robust deterioration.</p>
 
 ### Running example
 
