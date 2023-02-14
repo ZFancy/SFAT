@@ -45,7 +45,7 @@ def args_parser():
     parser.add_argument('--agg-center',type=str,default='FedAvg',help='option of aggregation: FedAvg, SFAT')
     parser.add_argument('--mu', type=float, default=0.01, help='mu for FedProx')
     parser.add_argument('--modeltype',type=str,default='NIN',help='different model structure')
-    parser.add_argument('--pri', type=float, default=1.4, help='weight for (1+alpha)/(1-alpha)')
+    parser.add_argument('--pri', type=float, default=1.4, help='weight for (1+alpha)/(1-alpha): 1.2, 1.4, 1.6 ...')
     parser.add_argument('--topk',type=int, default=1, help='top client to be upweight')
     parser.add_argument('--train-method',type=str,default='AT',help='different training method: AT, TRADES, MART')
   
