@@ -21,7 +21,7 @@ TODO:
 - [ ] Update the Presentation [Slides]() and [Video]().
 - [x] Released the early version of sample code.
 
-### TLDR
+### TL;DR
 
 Our SFAT assigns the client-wise slack during aggregation to combat the intensified heterogeneity, which is induced by the inner-maximization of adversarial training on the heterogeneous data in federated learning.
 
