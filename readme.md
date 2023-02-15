@@ -134,10 +134,10 @@ To evaluate our trained model using various attack methods, we provide the ```ev
 CUDA_VISIBLE_DEVICES='0' python eval_pgd.py --net [NETWORK STRUCTURE] --dataset [DATASET] --model_path [MODLE PATH]
 ~~~
 Sample results:
-| CIFAR-10 (Non-IID) | Natural | FGSM             | PGD-20           | CW    | AutoAttack       |
-|:----------:|---------|------------------|------------------|------------------|------------------|
-| FedAvg   | FAT     | 58.13 (0.68) | 40.06 (0.62) | 32.56 (0.01) | 30.88 (0.37) |
-| FedAvg   | **SFAT**    | **63.36** (0.07) | **44.82** (0.32) | **37.14** (0.03) | **33.39** (0.61) |
+| CIFAR-10 (Non-IID) | Method | Natural | FGSM             | PGD-20           | CW    | AutoAttack       |
+|:----------:|:---------:|---------|------------------|------------------|------------------|------------------|
+| FedAvg   | FAT     | 58.13 (0.68) | 40.06 (0.62) | 32.56 (0.01) | 30.88 (0.37) | 29.17 (0.03) |
+| FedAvg   | **SFAT**    | **63.36** (0.07) | **44.82** (0.32) | **37.14** (0.03) | **33.39** (0.61) | **31.66** (0.70) |
 
 
 
@@ -158,9 +158,9 @@ Either the local optimization or aggregation method can be re-designed based on 
 
 ```bibtex
 @inproceedings{zhu2023combating,
-title       ={Combating Exacerbated Heterogeneity for Robust Decentralized Models},
+title       ={Combating Exacerbated Heterogeneity for Robust Models in Federated Learning},
 author      ={Jianing Zhu and Jiangchao Yao and Tongliang Liu and quanming yao and Jianliang Xu and Bo Han},
-booktitle   ={International Conference on Learning Representations},
+booktitle   ={The Eleventh International Conference on Learning Representations },
 year        ={2023},
 url         ={https://openreview.net/forum?id=eKllxpLOOm}
 }
