@@ -1,6 +1,7 @@
 <h1 align="center">SFAT: Slack Federated Adversarial Training</h1>
 <p align="center">
-    <a href="https://openreview.net/forum?id=eKllxpLOOm"><img src="https://img.shields.io/badge/OpenReview-SFAT-green" alt="Paper"></a>
+    <a href="https://arxiv.org/abs/2303.00250"><img src="https://img.shields.io/badge/arXiv-2303.00250-b31b1b.svg" alt="Paper"></a>
+    <a href="https://openreview.net/forum?id=eKllxpLOOm"><img src="https://img.shields.io/badge/OpenReview-SFAT-blue" alt="Paper"></a>
     <a href="https://github.com/ZFancy/SFAT"><img src="https://img.shields.io/badge/-Github-grey?logo=github" alt="Github"></a>
     <!-- <a href="https://colab.research.google.com/drive/1t0_4BxEJ0XncyYvn_VyEQhxwNMvtSUNx?usp=sharing"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Colab"></a> -->
     <a href="https://openreview.net/forum?id=eKllxpLOOm"> <img alt="License" src="https://img.shields.io/static/v1?label=Pub&message=ICLR%2723&color=red"> </a>
@@ -19,6 +20,7 @@ TODO:
 
 - [ ] Update the Project Page of SFAT.
 - [ ] Update the Presentation [Slides]() and [Video]().
+- [x] Released the arXiv version of SFAT.
 - [x] Released the early version of sample code.
 
 ### TL;DR
