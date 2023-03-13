@@ -157,7 +157,7 @@ Either the local optimization or aggregation method can be re-designed based on 
 - https://github.com/zjfheart/Geometry-aware-Instance-reweighted-Adversarial-Training
 
 --- 
-
+If you find our paper and repo useful, please cite our paper:
 ```bibtex
 @inproceedings{zhu2023combating,
 title       ={Combating Exacerbated Heterogeneity for Robust Models in Federated Learning},
