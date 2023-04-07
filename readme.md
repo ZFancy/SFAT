@@ -7,7 +7,7 @@
     <a href="https://openreview.net/forum?id=eKllxpLOOm"> <img alt="License" src="https://img.shields.io/static/v1?label=Pub&message=ICLR%2723&color=red"> </a>
     <!-- <a href="https://github.com/ZFancy/SFAT/blob/main/license"> <img alt="License" src="https://img.shields.io/github/license/ZFancy/SFAT?color=blue"> </a>-->
     <!-- <a href="https://neurips.cc/virtual/2022/poster/54643"> <img src="https://img.shields.io/badge/Video-grey?logo=Kuaishou&logoColor=white" alt="Video"></a> -->
-    <!-- <a href="https://lfhase.win/files/slides/CIGA.pdf"> <img src="https://img.shields.io/badge/Slides-grey?&logo=MicrosoftPowerPoint&logoColor=white" alt="Slides"></a> -->
+    <a href="https://github.com/ZFancy/SFAT/blob/main/pictures/ICLR23_SFAT.pdf"> <img src="https://img.shields.io/badge/Slides-SFAT-yellow" alt="Slides"></a>
    <!--  <a href="https://icml.cc/media/PosterPDFs/ICML%202022/a8acc28734d4fe90ea24353d901ae678.png"> <img src="https://img.shields.io/badge/Poster-grey?logo=airplayvideo&logoColor=white" alt="Poster"></a> -->
 </p>
 
@@ -19,7 +19,7 @@ This repo contains the sample code of our proposed framework ```Slack Federated 
 TODO:
 
 - [ ] Update the Project Page of SFAT.
-- [ ] Update the Presentation [Slides]() and [Video]().
+- [ ] Update the Presentation [Slides](https://github.com/ZFancy/SFAT/blob/main/pictures/ICLR23_SFAT.pdf) and [Video]().
 - [x] Released the arXiv version of SFAT.
 - [x] Released the early version of sample code.
 
