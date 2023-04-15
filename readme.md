@@ -27,6 +27,8 @@ TODO:
 
 Our SFAT assigns the client-wise slack during aggregation to combat the intensified heterogeneity, which is induced by the inner-maximization of adversarial training on the heterogeneous data in federated learning.
 
+<p align="center"><img src="./pictures/poster_2023-1.png" width=90% height=50%></p>
+
 ## Introduction 
 
 The emerging privacy and security issues in real-world applications motivate us to pursue the adversarially robust federated models. However, the straightforward combination between adversarial training and federated learning in one framework can induce the undesired robustness deterioration.
