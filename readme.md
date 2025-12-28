@@ -18,7 +18,6 @@ This repo contains the sample code of our proposed framework ```Slack Federated 
 
 TODO:
 
-- [ ] Update the Project Page of SFAT.
 - [x] Update the Presentation [Slides](https://github.com/ZFancy/SFAT/blob/main/pictures/ICLR23_SFAT.pdf) and Video.
 - [x] Released the arXiv version of SFAT.
 - [x] Released the early version of sample code.
